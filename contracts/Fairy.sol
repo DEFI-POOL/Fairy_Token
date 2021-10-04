@@ -41,8 +41,8 @@ contract Fairy is ERC20{
     }
 
     /**
-     * @notice Change the minter address
-     * @param minter_ The address of the new minter
+     * @notice Change the governor address
+     * @param governor_ The address of the new minter
      */
     function setGovernor(address governor_) external {
         require(msg.sender == governor, "FRY::setGovernor: only the governor can change the governor address");
