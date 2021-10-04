@@ -63,6 +63,16 @@ contract Fairy is ERC20{
         _mint(msg.sender, amount);
     }
 
+
+    /// @notice Allows the controller to burn tokens from a user account
+    /// @param _user Address of the holder account to burn tokens from
+    /// @param _amount Amount of tokens to burn
+        
+    function Burn(address _user, uint256 _amount) external virtual onlyController {
+        _burn(_user, _amount);
+    }
+
+
     function totalSupply() public view virtual override returns (uint256) {
         return _totalSupply;
     }
