@@ -25,6 +25,11 @@ contract Fairy is ERC20{
     /// @notice Cap on the percentage of totalSupply that can be minted at each mint
     uint8 public constant mintCap = 2;
 
+    /**
+     * @notice Construct a new FRY token
+     * @param mintingAllowedAfter_ The timestamp after which minting may occur
+     */
+
     constructor(uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
         minter = msg.sender;
 
