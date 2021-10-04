@@ -8,7 +8,10 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 contract Fairy is ERC20{
 
     /// @dev Declare authorized token minter
-    address minter;
+    address public governor;
+
+    /// @notice is the contract address(Pool address) that is allowed to mint and burn token.
+    address public controller;
 
     /// @notice The timestamp after which minting may occur
     uint public mintingAllowedAfter;
@@ -31,7 +34,7 @@ contract Fairy is ERC20{
      */
 
     constructor(uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
-        minter = msg.sender;
+        governor = msg.sender;
 
         mintingAllowedAfter = mintingAllowedAfter_;
     }
@@ -40,10 +43,10 @@ contract Fairy is ERC20{
      * @notice Change the minter address
      * @param minter_ The address of the new minter
      */
-    function setMinter(address minter_) external {
-        require(msg.sender == minter, "FRY::setMinter: only the minter can change the minter address");
+    function setGovernor(address governor_) external {
+        require(msg.sender == governor, "FRY::setGovernor: only the governor can change the minter address");
         emit MinterChanged(minter, minter_);
-        minter = minter_;
+        governor = governor_;
     }
 
     /**
