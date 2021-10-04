@@ -12,6 +12,9 @@ contract Fairy is ERC20{
     /// @notice The timestamp after which minting may occur
     uint public mintingAllowedAfter;
 
+    /// @notice Minimum time between mints
+    uint32 public constant minimumTimeBetweenMints = 365 days; //1 year
+
     constructor(uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
         minter = msg.sender;
 
