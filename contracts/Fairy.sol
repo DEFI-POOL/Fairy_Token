@@ -22,6 +22,9 @@ contract Fairy is ERC20{
     /// @notice An event that is emitted when the minter address changes
     event MinterChanged(address minter, address newMinter);
 
+    /// @notice Cap on the percentage of totalSupply that can be minted at each mint
+    uint8 public constant mintCap = 2;
+
     constructor(uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
         minter = msg.sender;
 
@@ -44,6 +47,7 @@ contract Fairy is ERC20{
 
         // record the mint
         mintingAllowedAfter = SafeMath.add(block.timestamp, minimumTimeBetweenMints);
+        require(amount <= SafeMath.div(SafeMath.mul(_totalSupply, mintCap), 100), "Pool::mint: exceeded mint cap");
         _mint(msg.sender, amount);
     }
 }
