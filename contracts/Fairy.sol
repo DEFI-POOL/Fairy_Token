@@ -46,6 +46,10 @@ contract Fairy is ERC20{
         minter = minter_;
     }
 
+    /**
+     * @notice Mint new tokens (FRY)
+     * @param amount The number of tokens to be minted
+     */
     function mintFRY(uint amount) public {
         require(msg.sender == minter, "FRY::mint: only the minter can mint");
         require(block.timestamp >= mintingAllowedAfter, "FRY::mint: minting not allowed yet");
