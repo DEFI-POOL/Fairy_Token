@@ -37,6 +37,7 @@ contract Fairy is ERC20{
         governor = msg.sender;
 
         mintingAllowedAfter = mintingAllowedAfter_;
+        controller = controller_;
     }
 
     /**
