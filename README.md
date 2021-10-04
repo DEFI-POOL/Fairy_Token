@@ -79,19 +79,20 @@ No parameters
 
 transfer
 
-See {IERC20-transfer}. Requirements: - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`.
-Name 	Type 	Description
-recipient 	address 	
-amount 	uint256 	
+See {IERC20-transfer}. Requirements: - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`. 	
 
 | Name    	| Type    	| Description |
 | :---------|:---------:| -----------:|
 | recipient | address 	|             |
+| amount    | uint256 	|             |
 
 
-Returns:
-Name 	Type 	Description
-	bool 	
+Returns:	
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+|           | bool 	    |             |
+
+--------------------------------------------------------------------------------------------------
 transferFrom
 
 See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for ``sender``'s tokens of at least `amount`.
