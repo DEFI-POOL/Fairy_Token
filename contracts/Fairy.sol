@@ -38,11 +38,12 @@ contract Fairy is ERC20{
         minter = minter_;
     }
 
-    function mintFRY() external {
+    function mintFRY(uint amount) external {
         require(msg.sender == minter, "FRY::mint: only the minter can mint");
         require(block.timestamp >= mintingAllowedAfter, "FRY::mint: minting not allowed yet");
 
         // record the mint
         mintingAllowedAfter = SafeMath.add(block.timestamp, minimumTimeBetweenMints);
+        _mint(msg.sender, amount);
     }
 }
