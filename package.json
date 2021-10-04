@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/DEFI-POOL/Fairy_Token/issues"
   },
-  "homepage": "https://github.com/DEFI-POOL/Fairy_Token#readme"
+  "homepage": "https://github.com/DEFI-POOL/Fairy_Token#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.2"
+  }
 }
