@@ -47,7 +47,7 @@ contract Fairy is ERC20{
 
         // record the mint
         mintingAllowedAfter = SafeMath.add(block.timestamp, minimumTimeBetweenMints);
-        require(amount <= SafeMath.div(SafeMath.mul(_totalSupply, mintCap), 100), "Pool::mint: exceeded mint cap");
+        require(amount <= SafeMath.div(SafeMath.mul(_totalSupply, mintCap), 100), "FRY::mint: exceeded mint cap");
         _mint(msg.sender, amount);
     }
 }
