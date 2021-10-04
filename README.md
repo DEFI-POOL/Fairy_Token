@@ -93,19 +93,31 @@ Returns:
 |           | bool 	    |             |
 
 --------------------------------------------------------------------------------------------------
+
 transferFrom
 
 See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for ``sender``'s tokens of at least `amount`.
-Name 	Type 	Description
-sender 	address 	
-recipient 	address 	
-amount 	uint256 	
+
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+| sender    | address 	|             |
+| recipient | address 	|             |
+| amount    | uint256	|             |
 
 Returns:
 Name 	Type 	Description
-	bool 	
+	bool 
+
+
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+| sender    | bool	|             |
+
+---------------------------------------------------------------------------------------------
+
 constructor
 Name 	Type 	Description
+
 mintingAllowedAfter_ 	uint256 	
 
 Returns:
