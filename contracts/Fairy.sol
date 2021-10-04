@@ -23,7 +23,7 @@ contract Fairy is ERC20{
 
 
     /// @notice An event that is emitted when the minter address changes
-    event MinterChanged(address minter, address newMinter);
+    event GovernorChanged(address governor, address newGovernor);
 
     /// @notice Cap on the percentage of totalSupply that can be minted at each mint
     uint8 public constant mintCap = 2;
@@ -45,8 +45,8 @@ contract Fairy is ERC20{
      * @param minter_ The address of the new minter
      */
     function setGovernor(address governor_) external {
-        require(msg.sender == governor, "FRY::setGovernor: only the governor can change the minter address");
-        emit MinterChanged(minter, minter_);
+        require(msg.sender == governor, "FRY::setGovernor: only the governor can change the governor address");
+        emit GovernorChanged(governor, governor_);
         governor = governor_;
     }
 
@@ -54,8 +54,7 @@ contract Fairy is ERC20{
      * @notice Mint new tokens (FRY)
      * @param amount The number of tokens to be minted
      */
-    function mint(uint amount) public {
-        require(msg.sender == controller, "FRY::mint: only the controller contract can mint token");
+    function mint(uint amount) public onlyController {
         require(block.timestamp >= mintingAllowedAfter, "FRY::mint: minting not allowed yet");
 
         // record the mint
@@ -66,5 +65,11 @@ contract Fairy is ERC20{
 
     function totalSupply() public view virtual override returns (uint256) {
         return _totalSupply;
+    }
+
+     /// @dev Function modifier to ensure that the caller is the controller contract
+    modifier onlyController {
+        require(msg.sender == address(controller), "ControlledToken/only-controller");
+        _;
     }
 }
