@@ -9,7 +9,12 @@ contract Fairy is ERC20{
     /// @dev Declare authorized token minter
     address minter;
 
-    constructor() ERC20('Fairy', 'FRY'){
+    /// @notice The timestamp after which minting may occur
+    uint public mintingAllowedAfter;
+
+    constructor(uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
         minter = msg.sender;
+
+        mintingAllowedAfter = mintingAllowedAfter_;
     }
 }
