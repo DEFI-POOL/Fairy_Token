@@ -45,25 +45,37 @@ Returns:
 | Name    	| Type    	| Description |
 |:----------|:----------| -----------:|
 |	        | bool      |             |
+
+-------------------------------------------------------------------------------------------
 	
 mintFRY
 
 **Add Documentation for the method here**
-Name 	Type 	Description
-amount 	uint256 	
+	
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+| amount 	| uint256 	|             |
 
 Returns:
-
 No parameters
+--------------------------------------------------------------------------------------------
+
 setMinter
 
-**Add Documentation for the method here**
-Name 	Type 	Description
-minter_ 	address 	
+**Add Documentation for the method here**	
+
+Returns:
+No parameters
+
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+| amount 	| uint256 	|             |
 
 Returns:
 
 No parameters
+
+------------------------------------------------------------------------------------------------
 transfer
 
 See {IERC20-transfer}. Requirements: - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`.
