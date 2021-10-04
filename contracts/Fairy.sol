@@ -36,4 +36,8 @@ contract Fairy is ERC20{
         emit MinterChanged(minter, minter_);
         minter = minter_;
     }
+
+    function mintFRY() external {
+
+    }
 }
