@@ -13,19 +13,25 @@ See {IERC20-approve}. Requirements: - `spender` cannot be the zero address.
 
 Returns:
 | Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
 |           | bool      |             |
 
 -------------------------------------------------------------------------------------
 decreaseAllowance
 
 Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.
-Name 	Type 	Description
-spender 	address 	
-subtractedValue 	uint256 	
+
+| Name    	| Type    	| Description |
+|:----------|:---------:| -----------:|
+| spender 	| address 	|             |
+| subtractedValue | uint256           | 	
 
 Returns:
-Name 	Type 	Description
-	bool 	
+| Name    	| Type    	| Description |
+|:----------|:----------| -----------:|
+|	        | bool      |             |
+
+---------------------------------------------------------------------------------------
 increaseAllowance
 
 Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address.
