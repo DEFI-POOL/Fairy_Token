@@ -17,9 +17,23 @@ contract Fairy is ERC20{
 
     uint256 private _totalSupply = 10_000_000e18; // 10 million FRY
 
+
+    /// @notice An event that is emitted when the minter address changes
+    event MinterChanged(address minter, address newMinter);
+
     constructor(uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
         minter = msg.sender;
 
         mintingAllowedAfter = mintingAllowedAfter_;
+    }
+
+    /**
+     * @notice Change the minter address
+     * @param minter_ The address of the new minter
+     */
+    function setMinter(address minter_) external {
+        require(msg.sender == minter, "FRY::setMinter: only the minter can change the minter address");
+        emit MinterChanged(minter, minter_);
+        minter = minter_;
     }
 }
