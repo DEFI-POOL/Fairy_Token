@@ -69,19 +69,25 @@ No parameters
 
 | Name    	| Type    	| Description |
 | :---------|:---------:| -----------:|
-| amount 	| uint256 	|             |
+| minter_ 	| address 	|             |
 
 Returns:
 
 No parameters
 
 ------------------------------------------------------------------------------------------------
+
 transfer
 
 See {IERC20-transfer}. Requirements: - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`.
 Name 	Type 	Description
 recipient 	address 	
 amount 	uint256 	
+
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+| recipient | address 	|             |
+
 
 Returns:
 Name 	Type 	Description
