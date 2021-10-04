@@ -124,14 +124,22 @@ No parameters
 ---------------------------------------------------------------------------------------
 allowance
 
-See {IERC20-allowance}.
-Name 	Type 	Description
-owner 	address 	
-spender 	address 	
+See {IERC20-allowance}.	
 
-Returns:
-Name 	Type 	Description
-	uint256 	
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+| owner    	| address 	|             |
+| spender	| address 	|             |
+
+
+Returns:	 	
+
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+| 		   	| uint256	|             |
+
+
+--------------------------------------------------------------------------------------------
 balanceOf
 
 See {IERC20-balanceOf}.
