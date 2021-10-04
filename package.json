@@ -1,0 +1,25 @@
+{
+  "name": "fairy_token",
+  "version": "1.0.0",
+  "description": "An ERC20 Token",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DEFI-POOL/Fairy_Token.git"
+  },
+  "author": "George-Shammar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DEFI-POOL/Fairy_Token/issues"
+  },
+  "homepage": "https://github.com/DEFI-POOL/Fairy_Token#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.2"
+  }
+}
