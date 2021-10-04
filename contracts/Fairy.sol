@@ -33,7 +33,7 @@ contract Fairy is ERC20{
      * @param mintingAllowedAfter_ The timestamp after which minting may occur
      */
 
-    constructor(uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
+    constructor(address controller_, uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
         governor = msg.sender;
 
         mintingAllowedAfter = mintingAllowedAfter_;
@@ -53,8 +53,8 @@ contract Fairy is ERC20{
      * @notice Mint new tokens (FRY)
      * @param amount The number of tokens to be minted
      */
-    function mintFRY(uint amount) public {
-        require(msg.sender == minter, "FRY::mint: only the minter can mint");
+    function mint(uint amount) public {
+        require(msg.sender == controller, "FRY::mint: only the controller contract can mint token");
         require(block.timestamp >= mintingAllowedAfter, "FRY::mint: minting not allowed yet");
 
         // record the mint
