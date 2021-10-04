@@ -38,6 +38,6 @@ contract Fairy is ERC20{
     }
 
     function mintFRY() external {
-
+        require(msg.sender == minter, "FRY::mint: only the minter can mint");
     }
 }
