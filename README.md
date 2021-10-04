@@ -6,8 +6,9 @@ Functions
 approve
 
 See {IERC20-approve}. Requirements: - `spender` cannot be the zero address.
-Name 	Type 	Description
-spender 	address 	
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+| spender 	| address 	|             |
 amount 	uint256 	
 
 Returns:
