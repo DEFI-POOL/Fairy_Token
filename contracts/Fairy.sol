@@ -6,7 +6,10 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract Fairy is ERC20{
 
-    constructor() ERC20('Fairy', 'FRY'){
+    /// @dev Declare authorized token minter
+    address minter;
 
+    constructor() ERC20('Fairy', 'FRY'){
+        minter = msg.sender;
     }
 }
