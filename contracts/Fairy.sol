@@ -58,13 +58,13 @@ contract Fairy is ERC20{
      * @notice Mint new tokens (FRY)
      * @param amount The number of tokens to be minted
      */
-    function mint(uint amount) public onlyController {
+    function mint(address _user, uint amount) public onlyController {
         require(block.timestamp >= mintingAllowedAfter, "FRY::mint: minting not allowed yet");
 
         // record the mint
         mintingAllowedAfter = SafeMath.add(block.timestamp, minimumTimeBetweenMints);
         require(amount <= SafeMath.div(SafeMath.mul(_totalSupply, mintCap), 100), "FRY::mint: exceeded mint cap");
-        _mint(msg.sender, amount);
+        _mint(_user, amount);
     }
 
 
