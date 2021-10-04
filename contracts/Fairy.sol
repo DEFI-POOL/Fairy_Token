@@ -33,11 +33,10 @@ contract Fairy is ERC20{
      * @param mintingAllowedAfter_ The timestamp after which minting may occur
      */
 
-    constructor(address controller_, uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
+    constructor(uint mintingAllowedAfter_) ERC20('Fairy', 'FRY'){
         governor = msg.sender;
 
         mintingAllowedAfter = mintingAllowedAfter_;
-        controller = controller_;
     }
 
     /**
@@ -48,6 +47,11 @@ contract Fairy is ERC20{
         require(msg.sender == governor, "FRY::setGovernor: only the governor can change the governor address");
         emit GovernorChanged(governor, governor_);
         governor = governor_;
+    }
+
+    function setController(address controller_) external {
+        require(msg.sender == governor, "FRY::setGovernor: only the governor can set the controller contract address");
+        controller = controller_;
     }
 
     /**
