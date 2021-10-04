@@ -105,24 +105,23 @@ See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allo
 | amount    | uint256	|             |
 
 Returns:
-Name 	Type 	Description
-	bool 
-
 
 | Name    	| Type    	| Description |
 | :---------|:---------:| -----------:|
-| sender    | bool	|             |
+| sender    | bool		|             |
 
 ---------------------------------------------------------------------------------------------
 
 constructor
-Name 	Type 	Description
 
-mintingAllowedAfter_ 	uint256 	
+| Name    	| Type    	| Description |
+| :---------|:---------:| -----------:|
+| mintingAllowedAfter_    | uint256  	|             |
 
 Returns:
-
 No parameters
+
+---------------------------------------------------------------------------------------
 allowance
 
 See {IERC20-allowance}.
