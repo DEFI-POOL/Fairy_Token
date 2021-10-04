@@ -3,6 +3,7 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol"; 
 
 contract Fairy is ERC20{
 
@@ -39,5 +40,9 @@ contract Fairy is ERC20{
 
     function mintFRY() external {
         require(msg.sender == minter, "FRY::mint: only the minter can mint");
+        require(block.timestamp >= mintingAllowedAfter, "FRY::mint: minting not allowed yet");
+
+        // record the mint
+        mintingAllowedAfter = SafeMath.add(block.timestamp, minimumTimeBetweenMints);
     }
 }
